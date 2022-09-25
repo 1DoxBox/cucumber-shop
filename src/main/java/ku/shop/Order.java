@@ -24,4 +24,13 @@ public class Order {
             total += item.getSubtotal();
         return total;
     }
+
+    public int getStock(String product) {
+        int stock = 0;
+        for (OrderItem item : items)
+            if (item.getProductName().equals(product)){
+                stock = item.getStock();
+            }
+        return stock;
+    }
 }
